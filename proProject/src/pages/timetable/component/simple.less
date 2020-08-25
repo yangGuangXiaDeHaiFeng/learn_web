@@ -2,6 +2,7 @@
   width:780px;
   margin: 0 auto;
   background-color: white;
+  position: relative;
   .content{
     width: 100%;
     display: flex;
@@ -35,8 +36,23 @@
       .columnItem{
         width: 100px;
         border-left: 1px solid #E6E8FB;
+        text-align: center;
       }
     }
 
+  }
+  .topContent{
+    position: absolute;
+    top:68px;
+    left: 80px;
+    width: 700px;
+    height: 80px;
+    .item{
+      width: 100px;
+      text-align: center;
+      position: absolute;
+      background-color: white;
+      border: 1px solid #E6E8FB;
+    }
   }
 }
