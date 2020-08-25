@@ -38,6 +38,7 @@ const data = [
 const Simple: React.FC<{}> = props => {
   return (
     <div className={styles.root}>
+      {/*空课程表前端代码*/}
       <div className={styles.content}>
         <div className={styles.rowHead}>
           {
@@ -61,6 +62,7 @@ const Simple: React.FC<{}> = props => {
           }
         </div>)}
       </div>
+      {/*课程名称代码*/}
       <div className={styles.topContent}>
            {
              data.map((item)=>{
