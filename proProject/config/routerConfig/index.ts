@@ -20,6 +20,12 @@ export default  [
         component: './timetable',
       },
       {
+        path: '/charts',
+        name: 'charts',
+        icon: 'smile',
+        component: './charts',
+      },
+      {
         component: './404',
       },
     ],
