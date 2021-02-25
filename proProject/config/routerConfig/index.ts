@@ -1,4 +1,4 @@
-export default  [
+export default [
   {
     path: '/',
     component: '../layouts/BasicLayout',
@@ -26,6 +26,12 @@ export default  [
         component: './charts',
       },
       {
+        path: '/learnUseContext',
+        name: 'learnUseContext',
+        icon: 'smile',
+        component: './learnUseContext',
+      },
+      {
         component: './404',
       },
     ],
@@ -33,4 +39,4 @@ export default  [
   {
     component: './404',
   },
-]
+];
