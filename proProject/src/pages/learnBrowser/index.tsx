@@ -7,6 +7,7 @@ import React,{useEffect} from 'react';
  * 关闭浏览器的一系列工作
  */
 const Index = () => {
+  window.onbeforeunload=null;
   useEffect(()=>{
     return()=>{
       // 离开当前页面

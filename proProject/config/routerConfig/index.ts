@@ -38,6 +38,12 @@ export default [
         component: './learnBrowser',
       },
       {
+        path: '/learnUmiSetting',
+        name: 'learnUmiSetting',
+        icon: 'smile',
+        component: './learnUmiSetting',
+      },
+      {
         component: './404',
       },
     ],
