@@ -32,6 +32,12 @@ export default [
         component: './learnUseContext',
       },
       {
+        path: '/learnBrowser',
+        name: 'learnBrowser',
+        icon: 'smile',
+        component: './learnBrowser',
+      },
+      {
         component: './404',
       },
     ],
