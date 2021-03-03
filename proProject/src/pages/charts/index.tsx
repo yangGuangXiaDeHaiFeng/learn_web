@@ -2,6 +2,7 @@ import React from 'react';
 import BasicArea from '@/pages/charts/compnent/BasicArea';
 import BasicHeatMap from '@/pages/charts/compnent/BasicHeatMap';
 import GroupedColumn from '@/pages/charts/compnent/GroupedColumn';
+
 const doubleData = [
   {
     month: 'Jan',
@@ -231,7 +232,7 @@ const Index: React.FC<{}> = () => {
               fd.append('file', blob, 'singleImage.png');
               fd.append('collegeCode', '108900');
               fd.append('gradeCode', '2019');
-              upload('http://localhost:8080/my/first/test/user/uploadFile', fd);
+              upload('http://localhost:8080/my/first/test/file/uploadFile', fd);
             }
           },
           MIME_TYPE,
@@ -254,7 +255,7 @@ const Index: React.FC<{}> = () => {
       type: 'image/png',
     };
     const u8Arr = new Uint8Array(byteString.length);
-    for (let i = 0; i < byteString.length; i = i + 1) {
+    for (let i = 0; i < byteString.length; i += 1) {
       u8Arr[i] = byteString.charCodeAt(i);
     }
     return new File([u8Arr], fileName, options);
@@ -271,14 +272,14 @@ const Index: React.FC<{}> = () => {
         const MIME_TYPE = 'image/png';
         const fd = new FormData();
 
-        for (let i = 0; i < canvas.length; i++) {
+        for (let i = 0; i < canvas.length; i += 1) {
           const imgURL = canvas[i].toDataURL(MIME_TYPE, 1.0);
-          const imgFile = btof(imgURL, `img${i}`);
+          const imgFile = btof(imgURL, `img${i}.png`);
           fd.append('multipartFile', imgFile);
           fd.append('collegeCode', `108900${i}`);
           fd.append('gradeCode', `2019${i}`);
         }
-        upload('http://localhost:8080/my/first/test/user/uploadFiles', fd);
+        upload('http://localhost:8080/my/first/test/file/uploadFiles', fd);
       }
     }
   }
