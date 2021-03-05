@@ -44,6 +44,12 @@ export default [
         component: './learnUmiSetting',
       },
       {
+        path: '/canvas',
+        name: 'canvas',
+        icon: 'smile',
+        component: './canvas',
+      },
+      {
         component: './404',
       },
     ],
