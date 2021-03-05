@@ -292,6 +292,32 @@ const Index: React.FC<{}> = () => {
       }
     }
   }
+  function rotatedPic() {
+    const wrapDiv = document.getElementById('rotatedPic');
+    if (wrapDiv) {
+      const canvas = wrapDiv.querySelector('canvas');
+      if (canvas) {
+        const MIME_TYPE = 'image/png';
+        const imageUrl=canvas.toDataURL(MIME_TYPE,1.0);
+        const realCanvas=document.createElement('canvas');
+        realCanvas.width=canvas.height;
+        realCanvas.height=canvas.width;
+        const ctx=realCanvas.getContext('2d');
+        if(ctx){
+          const img=new Image();
+          img.src=imageUrl;
+          img.onload=()=>{
+            ctx.translate(realCanvas.width,0);
+            ctx.rotate(Math.PI/2);
+            ctx.drawImage(img,0,0,realCanvas.height,realCanvas.width);
+            exportCanvasAsPNG(realCanvas, 'test');
+
+          }
+        }
+
+      }
+    }
+  }
   return (
     <div style={{ background: 'white' }}>
       <div id="exportSingleFile" style={{ margin: '20px' }}>
@@ -322,6 +348,17 @@ const Index: React.FC<{}> = () => {
           legendName="city"
           maxLen={20}
         />
+        <div id="rotatedPic">
+          <a onClick={rotatedPic}>保存为图片（旋转90度）</a>
+
+          <GroupedColumn
+            data={doubleData}
+            xAxis="month"
+            yAxis="temperature"
+            legendName="city"
+            maxLen={20}
+          />
+        </div>
       </div>
     </div>
   );
