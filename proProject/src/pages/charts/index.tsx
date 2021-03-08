@@ -2,218 +2,14 @@ import React from 'react';
 import BasicArea from '@/pages/charts/compnent/BasicArea';
 import BasicHeatMap from '@/pages/charts/compnent/BasicHeatMap';
 import GroupedColumn from '@/pages/charts/compnent/GroupedColumn';
-
-const doubleData = [
-  {
-    month: 'Jan',
-    city: 'Tokyo',
-    temperature: 7,
-  },
-  {
-    month: 'Jan',
-    city: 'London',
-    temperature: 3.9,
-  },
-  {
-    month: 'Feb',
-    city: 'Tokyo',
-    temperature: 6.9,
-  },
-  {
-    month: 'Feb',
-    city: 'London',
-    temperature: 4.2,
-  },
-  {
-    month: 'Mar',
-    city: 'Tokyo',
-    temperature: 9.5,
-  },
-  {
-    month: 'Mar',
-    city: 'London',
-    temperature: 5.7,
-  },
-  {
-    month: 'Apr',
-    city: 'Tokyo',
-    temperature: 14.5,
-  },
-  {
-    month: 'Apr',
-    city: 'London',
-    temperature: 8.5,
-  },
-  {
-    month: 'May',
-    city: 'Tokyo',
-    temperature: 18.4,
-  },
-  {
-    month: 'May',
-    city: 'London',
-    temperature: 11.9,
-  },
-  {
-    month: 'Jun',
-    city: 'Tokyo',
-    temperature: 21.5,
-  },
-  {
-    month: 'Jun',
-    city: 'London',
-    temperature: 15.2,
-  },
-  {
-    month: 'Jul',
-    city: 'Tokyo',
-    temperature: 25.2,
-  },
-  {
-    month: 'Jul',
-    city: 'London',
-    temperature: 17,
-  },
-  {
-    month: 'Aug',
-    city: 'Tokyo',
-    temperature: 26.5,
-  },
-  {
-    month: 'Aug',
-    city: 'London',
-    temperature: 16.6,
-  },
-  {
-    month: 'Sep',
-    city: 'Tokyo',
-    temperature: 23.3,
-  },
-  {
-    month: 'Sep',
-    city: 'London',
-    temperature: 14.2,
-  },
-  {
-    month: 'Oct',
-    city: 'Tokyo',
-    temperature: 18.3,
-  },
-  {
-    month: 'Oct',
-    city: 'London',
-    temperature: 10.3,
-  },
-  {
-    month: 'Nov',
-    city: 'Tokyo',
-    temperature: 13.9,
-  },
-  {
-    month: 'Nov',
-    city: 'London',
-    temperature: 6.6,
-  },
-  {
-    month: 'Dec',
-    city: 'Tokyo',
-    temperature: 9.6,
-  },
-  {
-    month: 'Dec',
-    city: 'London',
-    temperature: 4.8,
-  },
-];
-
-const radarData = [
-  { month: '一月份', day: '星期一', sales: 10 },
-  { month: '二月份', day: '星期一', sales: 5 },
-  { month: '三月份', day: '星期一', sales: 10 },
-  { month: '四月份', day: '星期一', sales: 10 },
-  { month: '五月份', day: '星期一', sales: 10 },
-  { month: '六月份', day: '星期一', sales: 10 },
-  { month: '七月份', day: '星期一', sales: 10 },
-  { month: '八月份', day: '星期二', sales: 10 },
-  { month: '九月份', day: '星期一', sales: 10 },
-  { month: '十月份', day: '星期二', sales: 10 },
-  { month: '十一月份', day: '星期一', sales: 10 },
-  { month: '十二月份', day: '星期一', sales: 10 },
-  { month: '一月份', day: '星期二', sales: 10 },
-  { month: '二月份', day: '星期二', sales: 35 },
-  { month: '三月份', day: '星期二', sales: 10 },
-  { month: '四月份', day: '星期二', sales: 60 },
-  { month: '五月份', day: '星期二', sales: 10 },
-  { month: '六月份', day: '星期二', sales: 10 },
-  { month: '七月份', day: '星期二', sales: 10 },
-  { month: '八月份', day: '星期二', sales: 90 },
-  { month: '九月份', day: '星期二', sales: 10 },
-  { month: '十月份', day: '星期二', sales: 330 },
-  { month: '十一月份', day: '星期二', sales: 40 },
-  { month: '十二月份', day: '星期二', sales: 50 },
-  { month: '一月份', day: '星期三', sales: 10 },
-  { month: '二月份', day: '星期三', sales: 35 },
-  { month: '三月份', day: '星期三', sales: 10 },
-  { month: '四月份', day: '星期三', sales: 10 },
-  { month: '五月份', day: '星期三', sales: 10 },
-  { month: '六月份', day: '星期三', sales: 50 },
-  { month: '七月份', day: '星期三', sales: 40 },
-  { month: '八月份', day: '星期三', sales: 90 },
-  { month: '九月份', day: '星期三', sales: 10 },
-  { month: '十月份', day: '星期三', sales: 330 },
-  { month: '十一月份', day: '星期三', sales: 40 },
-  { month: '十二月份', day: '星期三', sales: 50 },
-  { month: '一月份', day: '星期六', sales: 10 },
-  { month: '二月份', day: '星期六', sales: 35 },
-  { month: '三月份', day: '星期六', sales: 1700 },
-  { month: '四月份', day: '星期六', sales: 1070 },
-  { month: '五月份', day: '星期六', sales: 1770 },
-  { month: '六月份', day: '星期六', sales: 580 },
-  { month: '七月份', day: '星期六', sales: 490 },
-  { month: '八月份', day: '星期六', sales: 456 },
-  { month: '九月份', day: '星期六', sales: 1000 },
-  { month: '十月份', day: '星期六', sales: 630 },
-  { month: '十一月份', day: '星期六', sales: 490 },
-  { month: '十二月份', day: '星期六', sales: 560 },
-];
-const basicLineData = [
-  {
-    year: '1991',
-    value: 3,
-  },
-  {
-    year: '1992',
-    value: 4,
-  },
-  {
-    year: '1993',
-    value: 3.5,
-  },
-  {
-    year: '1994',
-    value: 5,
-  },
-  {
-    year: '1995',
-    value: 4.9,
-  },
-  {
-    year: '1996',
-    value: 6,
-  },
-  {
-    year: '1997',
-    value: 7,
-  },
-  {
-    year: '1998',
-    value: 9,
-  },
-  {
-    year: '1999',
-    value: 13,
-  },
-];
+import {
+  base64ToBlob,
+  canvasToBase64,
+  exportCanvasAsPNG,
+  rotatedPic,
+  upload,
+} from '@/utils/exportPicUtils';
+import { basicLineData, doubleData, radarData } from '@/utils/datasource';
 
 const Index: React.FC<{}> = () => {
   /**
@@ -224,41 +20,16 @@ const Index: React.FC<{}> = () => {
     if (wrapDiv) {
       const canvas = wrapDiv.querySelector('canvas');
       if (canvas) {
-        const MIME_TYPE = 'image/png';
-        canvas.toBlob(
-          (blob) => {
-            if (blob) {
-              const fd = new FormData();
-              fd.append('file', blob, 'singleImage.png');
-              fd.append('collegeCode', '108900');
-              fd.append('gradeCode', '2019');
-              upload('http://localhost:8080/my/first/test/file/uploadFile', fd);
-            }
-          },
-          MIME_TYPE,
-          1.0,
-        );
+        const blob = base64ToBlob(canvasToBase64(canvas));
+
+        const fd = new FormData();
+        fd.append('file', blob, 'singleImage.png');
+        fd.append('collegeCode', '108900');
+        fd.append('gradeCode', '2019');
+
+        upload('http://localhost:8080/my/first/test/file/uploadFile', fd);
       }
     }
-  }
-
-  function upload(url: string, fd: any) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', url);
-    xhr.send(fd);
-  }
-
-  function btof(data: any, fileName: string) {
-    const dataArr = data.split(',');
-    const byteString = atob(dataArr[1]);
-    const options = {
-      type: 'image/png',
-    };
-    const u8Arr = new Uint8Array(byteString.length);
-    for (let i = 0; i < byteString.length; i += 1) {
-      u8Arr[i] = byteString.charCodeAt(i);
-    }
-    return new File([u8Arr], fileName, options);
   }
 
   /**
@@ -269,13 +40,11 @@ const Index: React.FC<{}> = () => {
     if (wrapDiv) {
       const canvas = wrapDiv.querySelectorAll('canvas');
       if (canvas) {
-        const MIME_TYPE = 'image/png';
         const fd = new FormData();
 
         for (let i = 0; i < canvas.length; i += 1) {
-          const imgURL = canvas[i].toDataURL(MIME_TYPE, 1.0);
-          const imgFile = btof(imgURL, `img${i}.png`);
-          fd.append('multipartFile', imgFile);
+          const blob = base64ToBlob(canvasToBase64(canvas[i]));
+          fd.append('multipartFile', blob);
           fd.append('collegeCode', `108900${i}`);
           fd.append('gradeCode', `2019${i}`);
         }
@@ -292,29 +61,12 @@ const Index: React.FC<{}> = () => {
       }
     }
   }
-  function rotatedPic() {
+  function saveToPic() {
     const wrapDiv = document.getElementById('rotatedPic');
     if (wrapDiv) {
       const canvas = wrapDiv.querySelector('canvas');
       if (canvas) {
-        const MIME_TYPE = 'image/png';
-        const imageUrl=canvas.toDataURL(MIME_TYPE,1.0);
-        const realCanvas=document.createElement('canvas');
-        realCanvas.width=canvas.height;
-        realCanvas.height=canvas.width;
-        const ctx=realCanvas.getContext('2d');
-        if(ctx){
-          const img=new Image();
-          img.src=imageUrl;
-          img.onload=()=>{
-            ctx.translate(realCanvas.width,0);
-            ctx.rotate(Math.PI/2);
-            ctx.drawImage(img,0,0,realCanvas.height,realCanvas.width);
-            exportCanvasAsPNG(realCanvas, 'test');
-
-          }
-        }
-
+        rotatedPic(canvas, '旋转90度');
       }
     }
   }
@@ -349,14 +101,15 @@ const Index: React.FC<{}> = () => {
           maxLen={20}
         />
         <div id="rotatedPic">
-          <a onClick={rotatedPic}>保存为图片（旋转90度）</a>
+          <a onClick={saveToPic}>保存为图片（旋转90度）</a>
 
           <GroupedColumn
+            width={1000}
+            height={520}
             data={doubleData}
             xAxis="month"
             yAxis="temperature"
             legendName="city"
-            maxLen={20}
           />
         </div>
       </div>
@@ -364,15 +117,3 @@ const Index: React.FC<{}> = () => {
   );
 };
 export default Index;
-
-function exportCanvasAsPNG(canvasElement: any, fileName: string) {
-  const MIME_TYPE = 'image/png';
-  const imgURL = canvasElement.toDataURL(MIME_TYPE, 1.0);
-  const dlLink = document.createElement('a');
-  dlLink.download = fileName;
-  dlLink.href = imgURL;
-  dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
-  document.body.appendChild(dlLink);
-  dlLink.click();
-  document.body.removeChild(dlLink);
-}
