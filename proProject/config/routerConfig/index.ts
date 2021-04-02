@@ -50,6 +50,18 @@ export default [
         component: './canvas',
       },
       {
+        path: '/arithmetic',
+        name: 'arithmetic',
+        icon: 'smile',
+        component: './arithmetic',
+      },
+      {
+        path: '/learnMustache',
+        name: 'learnMustache',
+        icon: 'smile',
+        component: './learnMustache',
+      },
+      {
         component: './404',
       },
     ],
